@@ -2,19 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-  function App() {
-
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
-  )
-}
-
-export default App
-
+    <div>Home</div>
   )
 }
 
