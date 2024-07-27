@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 
 const RouteData: RouteType[] = [
     {
-        path: '',
+        path: '/',
         element: <Home />,
         title: 'home'
     },
@@ -20,6 +20,7 @@ const RoutesApp = () => {
     const pageRoutes = RouteData.map(({ path, title, element }: RouteType) => {
         return <Route key={title} path={`/${path}`} element={element} />;
     })
+    
     return (
         <Routes>{pageRoutes}</Routes>
     )
