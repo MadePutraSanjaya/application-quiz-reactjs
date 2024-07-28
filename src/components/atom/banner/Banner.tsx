@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
-
-interface BannerProps {
-  title: string;
-  description: string;
-}
+import { BannerProps } from "../../../interface/banner.type";
 
 const Banner = ({ title, description }: BannerProps) => {
   return (

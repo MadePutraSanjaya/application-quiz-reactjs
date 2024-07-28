@@ -1,4 +1,4 @@
-import RoutesApp from '../../utils/routes/Routes'
+import RoutesApp from '../../helpers/routes/Routes'
 import Navbar from '../atom/navbar/Navbar'
 import Footer from '../atom/footer/Footer'
 
