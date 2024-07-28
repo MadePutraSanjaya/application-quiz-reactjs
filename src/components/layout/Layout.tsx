@@ -1,21 +1,28 @@
-import RoutesApp from '../../helpers/routes/Routes'
-import Navbar from '../atom/navbar/Navbar'
-import Footer from '../atom/footer/Footer'
+import RoutesApp from "../../helpers/routes/Routes";
+import Navbar from "../atom/navbar/Navbar";
+import Footer from "../atom/footer/Footer";
+import { useLocation } from "react-router";
 
 const Layout = () => {
-    return (
-        <>
-            <header>
-                <Navbar />
-            </header>
-            <main>
-                <RoutesApp />
-            </main>
-            <footer>
-                <Footer />
-            </footer>
-        </>
-    )
-}
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
+  return (
+    <>
+      {!isLoginPage && (
+        <header>
+          <Navbar />
+        </header>
+      )}
+      <main>
+        <RoutesApp />
+      </main>
+      {!isLoginPage && (
+        <footer>
+          <Footer />
+        </footer>
+      )}
+    </>
+  );
+};
 
-export default Layout
+export default Layout;

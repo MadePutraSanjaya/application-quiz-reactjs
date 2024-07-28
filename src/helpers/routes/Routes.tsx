@@ -1,7 +1,9 @@
 import Home from '../../pages/home/Home'
-import Quiz from '../../pages/join/Join'
+import Join from '../../pages/join/Join'
 import { Route as RouteType } from '../../interface/route.type'
 import { Route, Routes } from "react-router-dom";
+import Login from '../../pages/login/Login';
+import Quiz from '../../pages/join/Join';
 
 const RouteData: RouteType[] = [
     {
@@ -11,8 +13,18 @@ const RouteData: RouteType[] = [
     },
     {
         path: '/join',
-        element: <Quiz />,
+        element: <Join />,
         title: 'join'
+    },
+    {
+        path: '/quiz',
+        element: <Quiz />,
+        title: 'quiz'
+    },
+    {
+        path: '/login',
+        element: <Login />,
+        title: 'login'
     },
 ]
 
