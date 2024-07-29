@@ -1,7 +1,8 @@
 export interface OptionProps {
-    value: string;
+    value?: string | number;
     label?: string;
     children?: React.ReactNode;
+    disabled?: boolean;
 }
 
 export interface SelectInputProps {
@@ -10,4 +11,5 @@ export interface SelectInputProps {
     onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
     defaultValue?: string;
     children?: React.ReactNode;
+    disabled?: boolean;
 }

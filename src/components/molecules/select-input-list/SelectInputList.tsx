@@ -8,7 +8,7 @@ const SelectInputList = ({ value, onChange, options }: SelectInputProps) => {
       <Select value={value} onChange={onChange}>
         {options &&
           options.map((option) => (
-            <Option key={option.value} value={option.value}>
+            <Option key={option.value} value={option.value} disabled={option.disabled}>
               {option.label}
             </Option>
           ))}
