@@ -1,31 +1,30 @@
 import { MdArrowBack } from "react-icons/md";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/atom/input/Input";
 import { TypeInputProps } from "../../interface/input.type";
 import Button from "../../components/atom/button/Button";
 import { useState, useEffect } from "react";
-import {getItem, setItem} from "../../helpers/localStorage/useLocalStorage";
+import { getItem, setItem } from "../../helpers/localStorage/useLocalStorage";
 
 const Login = () => {
-  const [username, setUsername] = useState<string>('')
-  const location = useLocation()
+  const [username, setUsername] = useState<string>("");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const savedUsername = getItem<string>('username');
+    const savedUsername = getItem<string>("username");
     if (savedUsername) {
-      location.pathname === "/quiz"
+      navigate("/join");
     }
-  }, [location]);
+  }, [navigate]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
-  }
+  };
 
   const handleLogin = () => {
-    setItem('username', username)
-    window.location.href = "/quiz";
-  }
-
+    setItem("username", username);
+    navigate("/join");
+  };
 
   return (
     <>
@@ -70,7 +69,9 @@ const Login = () => {
               onChange={handleInputChange}
               className="mt-6 w-full"
             />
-            <Button className="mt-4 w-full" onClick={handleLogin}>Login</Button>
+            <Button className="mt-4 w-full" onClick={handleLogin}>
+              Login
+            </Button>
           </div>
         </div>
       </div>
